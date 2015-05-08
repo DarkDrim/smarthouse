@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.isosystem.smarthouse"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-feature android:name="android.hardware.usb.host" />
+
+    <uses-permission android:name="android.permission.USB_PERMISSION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="16" />
+
+    <application
+        android:name="com.isosystem.smarthouse.MyApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:killAfterRestore="true"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:persistent="true"
+        android:theme="@style/_TestTheme" >
+        <receiver
+            android:name="com.isosystem.smarthouse.BootCompletedEventReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".Utils.PowerConnectionReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.isosystem.smarthouse.BootCompletedEventReceiver"
+            android:exported="false"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Сервис для приема сообщений от контроллера -->
+        <service
+            android:name="com.isosystem.smarthouse.Connection.USBReceiveService"
+            android:enabled="true"
+            android:exported="false"
+            android:stopWithTask="true" />
+        <!-- Сервис для отсылки сообщений контроллеру -->
+        <service
+            android:name="com.isosystem.smarthouse.Connection.USBSendService"
+            android:enabled="true" />
+
+        <!-- Служебное окно для отлова присоединения USB-устройства -->
+        <activity
+            android:name="com.isosystem.smarthouse.Connection.UsbAttachEventReceiver"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:label="Умный дом"
+            android:noHistory="true"
+            android:permission="android.permission.USB_PERMISSION"
+            android:process=":UsbEventReceiverActivityProcess"
+            android:taskAffinity="com.example.taskAffinityUsbEventReceiver"
+            android:theme="@style/Theme.Transparent" >
+            <intent-filter>
+                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
+                android:resource="@xml/usb_device_filter" />
+        </activity>
+
+        <!-- Обычные активити -->
+
+        <activity
+            android:name=".MainActivity"
+            android:excludeFromRecents="true"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.isosystem.smarthouse.Settings.SettingsActivity"
+            android:excludeFromRecents="true"
+            android:label="@string/title_activity_settings"
+            android:windowSoftInputMode="stateAlwaysHidden" >
+        </activity>
+        <activity
+            android:name="com.isosystem.smarthouse.Settings.AddMenuItemActivity"
+            android:label="@string/title_add_menu_item_activity"
+            android:noHistory="true"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name="com.isosystem.smarthouse.MainMenuPageSendIntValueActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/title_activity_main_settings"
+            android:noHistory="true"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name="com.isosystem.smarthouse.MainMenuPageSendPasswordActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/title_activity_main_settings"
+            android:noHistory="true"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".Settings.ApplicationPreferencesActivity"
+            android:label="Настройки приложения"
+            android:noHistory="true" >
+        </activity>
+        <activity
+            android:name="com.isosystem.smarthouse.MainMenuPageSendBoolValueActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/title_activity_main_settings"
+            android:noHistory="true"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".Settings.AddMenuItemSendValue"
+            android:label="@string/title_activity_add_menu_item_send_value"
+            android:noHistory="true" >
+        </activity>
+        <activity
+            android:name=".Settings.AddMenuItemSendPassword"
+            android:label="@string/title_activity_add_menu_item_send_password" >
+        </activity>
+        <activity
+            android:name=".Settings.AddMenuItemSendBool"
+            android:label="@string/title_activity_add_menu_item_send_bool" >
+        </activity>
+        <activity
+            android:name=".Settings.AddMenuItemSendMessage"
+            android:label="Отсылка сообщения" >
+        </activity>
+        <activity
+            android:name=".FormattedScreensActivity"
+            android:label="Окно форматированного вывода"
+            android:noHistory="true" >
+        </activity>
+        <activity
+            android:name=".Settings.ImportExportFilesActivity"
+            android:label="Импорт\экспорт файлов"
+            android:noHistory="true" >
+        </activity>
+        <activity
+            android:name="com.isosystem.smarthouse.Settings.TestFormattedScreenActivity"
+            android:label="Окно форматированного вывода"
+            android:noHistory="true" >
+        </activity>
+        <activity
+            android:name=".Settings.AddFormattedScreenActivity"
+            android:label="Добавление окна форматированного вывода"
+            android:noHistory="true" >
+        </activity>
+        <activity
+            android:name=".Utils.ScreenSaverActivity"
+            android:label="Хранитель экрана"
+            android:noHistory="true" >
+        </activity>
+        <activity
+            android:name="com.isosystem.smarthouse.Utils.ScreenDimActivity"
+            android:noHistory="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" >
+        </activity>
+        <activity
+            android:name="com.isosystem.smarthouse.Utils.BackgroundPreference"
+            android:noHistory="true" >
+        </activity>
+    </application>
+
+</manifest>
