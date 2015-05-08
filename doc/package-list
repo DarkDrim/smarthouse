@@ -1,0 +1,10 @@
+com.isosystem.smarthouse
+com.isosystem.smarthouse.Connection
+com.isosystem.smarthouse.Dialogs
+com.isosystem.smarthouse.Logging
+com.isosystem.smarthouse.Notifications
+com.isosystem.smarthouse.Pages
+com.isosystem.smarthouse.Settings
+com.isosystem.smarthouse.TreeStructure
+com.isosystem.smarthouse.Utils
+com.isosystem.smarthouse.XMLProcessor

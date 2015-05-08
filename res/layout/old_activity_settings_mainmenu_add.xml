@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:scrollbars="vertical" >
+
+    <TextView
+        android:id="@+id/add_item_menu_fragment_textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Заголовок пункта" />
+
+    <EditText
+        android:id="@+id/add_item_menu_fragment_editText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp" >
+    </EditText>
+
+    <TextView
+        android:id="@+id/add_item_menu_fragment_textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Добавить в меню:" />
+
+    <Spinner
+        android:id="@+id/add_item_menu_fragment_spinner1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp" />
+
+    <TextView
+        android:id="@+id/add_item_menu_fragment_textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Тип пункта" />
+
+    <RadioGroup
+        android:id="@+id/add_item_menu_fragment_radioGroup1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp" >
+
+        <RadioButton
+            android:id="@+id/add_item_menu_fragment_radio0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Меню" />
+
+        <RadioButton
+            android:id="@+id/add_item_menu_fragment_radio1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Конечная точка" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/add_item_menu_fragment_textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Вид конечного окна" />
+
+    <Spinner
+        android:id="@+id/add_item_menu_fragment_spinner2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <TextView
+            android:id="@+id/sv_fl_image"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/px"
+            android:background="#6F7073"
+            android:gravity="center"
+            android:text="* Выбор изображения для пункта меню"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+    
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#000000" >
+
+                <Gallery
+                    android:id="@+id/sv_images_gallery"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/px"
+                    android:layout_weight="1"
+                    android:background="@android:color/darker_gray"
+                    android:spacing="0dp" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="97dp"
+                android:layout_height="@dimen/pic_size"
+                android:background="#000000" >
+
+                <ImageView
+                    android:id="@+id/sv_gallery_selected_image"
+                    android:layout_width="@dimen/pic_size"
+                    android:layout_height="@dimen/pic_size"
+                    android:layout_gravity="fill"
+                    android:layout_margin="@dimen/px"
+                    android:layout_weight="1"
+                    android:background="@android:color/darker_gray"
+                    android:scaleType="fitXY" />
+
+            </FrameLayout>
+        </LinearLayout>
+    
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|end" >
+
+        <Button
+            android:id="@+id/add_item_menu_fragment_addButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Подтвердить" />
+
+        <Button
+            android:id="@+id/add_item_menu_fragment_clearButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Назад" />
+    </LinearLayout>
+
+</LinearLayout>

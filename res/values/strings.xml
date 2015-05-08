@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Умный дом</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Настройки</string>
+    <string name="title_activity_main_settings">MainSettingsActivity</string>
+    <string name="title_add_menu_item_activity">Добавить пункт меню</string>
+    <string name="title_activity_settings">Настройки</string>
+    <string name="title_activity_add_menu_item_send_value">Добавление пункта главного меню</string>
+    <string name="title_activity_add_menu_item_send_password">Добавление нового пункта меню (ввод пароля)</string>
+    <string name="title_activity_add_menu_item_send_bool">Добавление нового пункта меню (ввод булевого значения)</string>
+    
+    <!-- Добавление нового конечного пункта -->
+    <string name="header_text_tooltip">Текст, который будет показываться в качестве заголовка окна, формат - строка</string>
+    
+    <string name="summary">Процент от максимальной яркости, текущее значение: %1$d</string>
+    <string name="dialog_title">Яркость затеменного экрана (%)</string>
+    
+    <!-- Сообщения исключения -->
+    <string name ="exception_reload_menu_tree">Исключение при перезаписи меню</string>
+    
+    <string name = "company_url">  " www.l-control.com.ua"</string>
+    <string name = "company_phone">"     (048) 73-73-494 "</string>
+    
+	<string name = "title_alarm_messages">Сообщения</string>
+        
+    
+</resources>

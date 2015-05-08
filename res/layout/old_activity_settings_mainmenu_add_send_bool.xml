@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <!-- НАСТРОЙКА НАДПИСЕЙ -->
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="#000000" >
+
+            <TextView
+                android:id="@+id/sb_fl_texts"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="@dimen/px"
+                android:background="#6F7073"
+                android:gravity="center"
+                android:text="Настройка надписей"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </FrameLayout>
+
+        <!-- Текст заголовка -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/sb_tv_headertext"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="* Текст заголовка"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/sb_tv_headertext_tooltip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="Подсказка" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/sb_et_header_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:ems="10"
+            android:textSize="22sp" >
+
+            <requestFocus />
+        </EditText>
+
+        <!-- Текст поясняющей надписи -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/sb_tv_description_text"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="* Текст поясняющей надписи"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/sb_tv_description_text_tooltip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="Подсказка" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/sb_et_description_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:ems="10"
+            android:textSize="22sp" />
+
+<!-- НАСТРОЙКА НАДПИСЕЙ ДЛЯ БУЛЕВЫХ ЗНАЧЕНИЙ -->
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="#000000" >
+
+            <TextView
+                android:id="@+id/sb_fl_bool_texts"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="@dimen/px"
+                android:background="#6F7073"
+                android:gravity="center"
+                android:text="Надписи для булевых значений"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </FrameLayout>
+
+        <!-- Текст пришедшего TRUE значения -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/sb_tv_incoming_true_text"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Надпись для входящего значения 1"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/sb_tv_incoming_true_text_tooltip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="Подсказка" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/sb_et_incoming_true_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:ems="10"
+            android:textSize="22sp" />
+
+        <!-- Текст пришедшего FALSE значения -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/sb_tv_incoming_false_text"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Надпись для входящего значения 0"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/sb_tv_incoming_false_text_tooltip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="Подсказка" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/sb_et_incoming_false_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:ems="10"
+            android:textSize="22sp" />
+
+        <!-- Текст высылаемого TRUE значения -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/sb_tv_outgoing_true_text"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Надпись для исходящего значения 1"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/sb_tv_outgoing_true_text_tooltip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="Подсказка" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/sb_et_outgoing_true_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:ems="10"
+            android:textSize="22sp" />
+
+        <!-- Текст высылаемого FALSE значения -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/sb_tv_outgoing_false_text"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Надпись для исходящего значения 0"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/sb_tv_outgoing_false_text_tooltip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="Подсказка" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/sb_et_outgoing_false_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:ems="10"
+            android:textSize="22sp" />
+
+        <!-- ВЫБОР ИЗОБРАЖЕНИЯ -->
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#000000" >
+
+            <TextView
+                android:id="@+id/sb_fl_image"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="@dimen/px"
+                android:background="#6F7073"
+                android:gravity="center"
+                android:text="* Выбор изображения для пункта меню"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </FrameLayout>
+
+        <!-- Выбор изображения -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#000000" >
+
+                <Gallery
+                    android:id="@+id/sb_images_gallery"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/px"
+                    android:layout_weight="1"
+                    android:background="#FFFFFF"
+                    android:spacing="0dp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="97dp"
+                android:layout_height="@dimen/pic_size"
+                android:background="#000000" >
+
+                <ImageView
+                    android:id="@+id/sb_gallery_selected_image"
+                    android:layout_width="@dimen/pic_size"
+                    android:layout_height="@dimen/pic_size"
+                    android:layout_gravity="fill"
+                    android:layout_margin="@dimen/px"
+                    android:layout_weight="1"
+                    android:background="#FFFFFF"
+                    android:scaleType="fitXY" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <!-- ОБРАБОТКА ВХОДЯЩЕГО ЗНАЧЕНИЯ -->
+
+
+        <!-- Формула обработки входящего значения -->
+
+
+        <!-- Количество знаков после запятой -->
+
+
+        <!-- ОБРАБОТКА ИСХОДЯЩЕГО ЗНАЧЕНИЯ -->
+
+
+        <!-- Формула обработки исходящего значения -->
+
+
+        <!-- Формуля дла валидации обработанного значения -->
+
+
+        <!-- ОБМЕН СООБЩЕНИЯМИ С КОНТРОЛЛЕРОМ -->
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="top"
+            android:layout_weight="1"
+            android:background="#000000" >
+
+            <TextView
+                android:id="@+id/sb_fl_messages_adjustment"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="@dimen/px"
+                android:background="#6F7073"
+                android:gravity="center"
+                android:text="Настройка обмена сообщениями с контроллером"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </FrameLayout>
+
+        <!-- Сообщение "дай мне значения" для контроллера -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/sb_tv_givemevalue_message"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="* Запрос текущего значения от контроллера"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/sb_tv_givemevalue_message_tooltip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="Подсказка" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/sb_et_givemevalue_message"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:ems="10" >
+        </EditText>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/sb_tv_outgoing_value_message"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="* Префикс для отправки введенного значения"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/sb_tv_outgoing_value_message_dialog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="Проверка сообщения" />
+
+            <Button
+                android:id="@+id/sb_tv_outgoing_value_message_tooltip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="Подсказка" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/sb_et_outgoing_value_message"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:ems="10" >
+        </EditText>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="bottom" >
+
+            <Button
+                android:id="@+id/sb_okButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Подтвердить" />
+
+            <Button
+                android:id="@+id/sb_backButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Назад" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>
